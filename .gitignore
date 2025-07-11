@@ -1,0 +1,4 @@
+Agent/__pycache__/
+dataset/
+RAG/chunking/__pycache__/
+RAG/document_loader/__pycache__/
