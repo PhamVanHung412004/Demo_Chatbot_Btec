@@ -1,5 +1,7 @@
 Agent/__pycache__/
 dataset/
-RAG/chunking/__pycache__/
+dataset/__pycache__/
+RAG/chunking_dataset/__pycache__/
 RAG/document_loader/__pycache__/
-.gitignore/
+RAG/__pycache__/
+RAG/Embedding/__pycache__/
