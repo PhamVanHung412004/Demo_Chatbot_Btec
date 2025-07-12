@@ -1,7 +1,7 @@
 from RAG import (
     get_data,
     Chunking_Data,
-    VectorstoreBuilder
+    create_vectorstore_with_progress
 )
 from langchain_huggingface import HuggingFaceEmbeddings
 from typing import (
@@ -34,7 +34,12 @@ def main() -> None:
     
     data_split : List[str] = chunking(documents)
     
-    VectorstoreBuilder(embeddings=INIT_MODEL_EMBEDDING.embeddings,persist_directory="VectorDB/chroma_db",batch_size=100).build(data_split)
+    vectorstore = create_vectorstore_with_progress(
+        documents=data_split,
+        embeddings=INIT_MODEL_EMBEDDING.embeddings,
+        persist_directory="VectorDB/chroma",
+        batch_size=100
+    )
 
 if __name__ == "__main__":
     main()
