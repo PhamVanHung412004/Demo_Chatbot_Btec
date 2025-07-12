@@ -20,7 +20,7 @@ class VectorstoreBuilder:
             embedding_function=self.embeddings
         )
 
-    def build(self, documents):
+    def build(self, documents) -> None:
         """
         Tạo vectorstore từ danh sách tài liệu với thanh tiến trình.
         
@@ -46,5 +46,3 @@ class VectorstoreBuilder:
         print("Persisting to disk...")
         self.vectorstore.persist()
         print("✅ Complete!")
-
-        return self.vectorstore

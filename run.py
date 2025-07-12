@@ -34,13 +34,7 @@ def main() -> None:
     
     data_split : List[str] = chunking(documents)
     
-    vectorstore = VectorstoreBuilder(
-        embeddings=INIT_MODEL_EMBEDDING.embeddings,
-        persist_directory="VectorDB/chroma_db",
-        batch_size=100
-    )
-
-    vectorstore = builder.build(data_split)
+    VectorstoreBuilder(embeddings=INIT_MODEL_EMBEDDING.embeddings,persist_directory="VectorDB/chroma_db",batch_size=100).build(data_split)
 
 if __name__ == "__main__":
     main()
